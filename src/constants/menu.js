@@ -1,0 +1,162 @@
+const MENU_ITEMS = [
+    { key: 'navigation', label: 'Navigation', isTitle: true },
+    {
+        key: 'dashboards',
+        label: 'Dashboards',
+        isTitle: false,
+        icon: 'uil-home-alt',
+        badge: { variant: 'success', text: '4' },
+        children: [
+            { key: 'ds-analytics', label: 'Analytics', url: '/dashboard/analytics', parentKey: 'dashboards' },
+            { key: 'ds-crm', label: 'CRM', url: '/dashboard/crm', parentKey: 'dashboards' },
+            { key: 'ds-ecommerce', label: 'Ecommerce', url: '/dashboard/ecommerce', parentKey: 'dashboards' },
+            { key: 'ds-ecommerce', label: 'Secure Test', url: '/secured', parentKey: 'dashboards' },
+            { key: 'ds-ecommerce', label: 'Secure Test 2', url: '/secured2', parentKey: 'dashboards' },
+            { key: 'ds-project', label: 'Projects', url: '/dashboard/project', parentKey: 'dashboards' },
+        ],
+    },
+
+    { key: 'apps', label: 'Apps', isTitle: true },
+    { key: 'apps-location', label: 'Residence Information', isTitle: false,  
+            children: [
+            {
+            key: 'location-verify',
+            label: 'Residence Verification',
+            url: 'apps/verification',
+            parentKey: 'apps-locations'
+            }],
+    }, 
+    { key: 'apps-chat', label: 'Chat', isTitle: false, icon: 'uil-comments-alt', url: '/apps/chat' },
+    {
+        key: 'apps-ecommerce',
+        label: 'Ecommerce',
+        isTitle: false,
+        icon: 'uil-store',
+        children: [
+            {
+                key: 'ecommerce-products',
+                label: 'Products',
+                url: '/apps/ecommerce/products',
+                parentKey: 'apps-ecommerce',
+            },
+            {
+                key: 'ecommerce-details',
+                label: 'Products Details',
+                url: '/apps/ecommerce/details',
+                parentKey: 'apps-ecommerce',
+            },
+            { key: 'ecommerce-orders', label: 'Orders', url: '/apps/ecommerce/orders', parentKey: 'apps-ecommerce' },
+            {
+                key: 'ecommerce-order-details',
+                label: 'Order Details',
+                url: '/apps/ecommerce/order/details',
+                parentKey: 'apps-ecommerce',
+            },
+            {
+                key: 'ecommerce-customers',
+                label: 'Customers',
+                url: '/apps/ecommerce/customers',
+                parentKey: 'apps-ecommerce',
+            },
+            {
+                key: 'ecommerce-shopping-cart',
+                label: 'Shopping Cart',
+                url: '/apps/ecommerce/shopping-cart',
+                parentKey: 'apps-ecommerce',
+            },
+            {
+                key: 'ecommerce-checkout',
+                label: 'Checkout',
+                url: '/apps/ecommerce/checkout',
+                parentKey: 'apps-ecommerce',
+            },
+            { key: 'ecommerce-sellers', label: 'Sellers', url: '/apps/ecommerce/sellers', parentKey: 'apps-ecommerce' },
+        ],
+    },
+    {
+        key: 'apps-email',
+        label: 'Email',
+        isTitle: false,
+        icon: 'uil-envelope',
+        children: [
+            { key: 'email-inbox', label: 'Inbox', url: '/apps/email/inbox', parentKey: 'apps-email' },
+            { key: 'email-read-email', label: 'Read Email', url: '/apps/email/details', parentKey: 'apps-email' },
+        ],
+    },
+    {
+        key: 'apps-projects',
+        label: 'Projects',
+        isTitle: false,
+        icon: 'uil-briefcase',
+        children: [
+            { key: 'project-list', label: 'List', url: '/apps/projects/list', parentKey: 'apps-projects' },
+            { key: 'project-details', label: 'Details', url: '/apps/projects/:id/details', parentKey: 'apps-projects' },
+            {
+                key: 'project-gantt',
+                label: 'Gantt',
+                url: '/apps/projects/gantt',
+                badge: { variant: 'light-lighten', text: 'New' },
+                parentKey: 'apps-projects',
+            },
+            {
+                key: 'project-create-project',
+                label: 'Create Project',
+                url: '/apps/projects/new',
+                badge: { variant: 'success-lighten', text: 'New' },
+                parentKey: 'apps-projects',
+            },
+        ],
+    },
+    { key: 'apps-social', label: 'Social Feed', isTitle: false, icon: 'uil-rss', url: '/apps/social' },
+    {
+        key: 'apps-tasks',
+        label: 'Tasks',
+        isTitle: false,
+        icon: 'uil-clipboard-alt',
+        children: [
+            { key: 'task-list', label: 'List', url: '/apps/tasks/list', parentKey: 'apps-tasks' },
+            { key: 'task-details', label: 'Details', url: '/apps/tasks/details', parentKey: 'apps-tasks' },
+            { key: 'task-kanban', label: 'Kanban Board', url: '/apps/tasks/kanban', parentKey: 'apps-tasks' },
+        ],
+    },
+    { key: 'file-uploader', label: 'File Uploader', isTitle: false, icon: 'uil-folder-plus', url: '/files' },
+    
+    { key: 'custom', label: 'Custom', isTitle: true },
+    {
+        key: 'pages',
+        label: 'Pages',
+        isTitle: false,
+        icon: 'uil-copy-alt',
+        children: [
+            { key: 'page-profile', label: 'Profile', url: '/pages/profile', parentKey: 'pages' },
+            { key: 'page-profile2', label: 'User Profiles', url: '/pages/UserProfiles', parentKey: 'pages' },
+            { key: 'page-invoice', label: 'Invoice', url: '/pages/invoice', parentKey: 'pages' },
+            { key: 'page-faq', label: 'FAQ', url: '/pages/faq', parentKey: 'pages' },
+            { key: 'page-pricing', label: 'Pricing', url: '/pages/pricing', parentKey: 'pages' },
+            {
+                key: 'page-maintenance',
+                label: 'Maintenance',
+                url: '/maintenance',
+                target: '_blank',
+                parentKey: 'pages',
+            },
+            { key: 'page-error-404', label: 'Error - 404', url: '/error-404', parentKey: 'pages' },
+            { key: 'page-error-404-alt', label: 'Error - 404-alt', url: '/pages/error-404-alt', parentKey: 'pages' },
+            { key: 'page-error-500', label: 'Error - 500', url: '/error-500', parentKey: 'pages' },
+            { key: 'page-starter', label: 'Starter Page', url: '/pages/starter', parentKey: 'pages' },
+            { key: 'page-preloader', label: 'With Preloader', url: '/pages/preloader', parentKey: 'pages' },
+            { key: 'page-timeline', label: 'Timeline', url: '/pages/timeline', parentKey: 'pages' },
+        ],
+    },
+    {
+        key: 'landing',
+        label: 'Landing',
+        isTitle: false,
+        icon: 'uil-globe',
+        url: '/landing',
+        target: '_blank',
+        badge: { variant: 'light-lighten', text: 'New' },
+    },
+];
+
+export default MENU_ITEMS;

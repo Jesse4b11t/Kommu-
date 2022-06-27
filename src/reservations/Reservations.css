@@ -1,0 +1,47 @@
+.full-container {
+    height: 770px;
+    background-color: #eef2f7;
+}
+
+.res-container {
+    background-color: white;
+    border: 1px solid rgb(176, 174, 174);
+    border-radius: 20px;
+    padding-top: 20px;
+    max-width: fit-content;
+    position: relative;
+    right: 300px;
+    top: -480px;
+    box-shadow: 0px, 6px, 20px, rgb(0 0 0 / 20%);
+}
+
+.res-title {
+    color: #436241;
+}
+
+.img-res {
+    width: 800px;
+    height: 600px;
+    position: relative;
+    left: 700px;
+    top: 100px;
+    border-radius: 20px;
+}
+
+.reserve-btn {
+    background-color: #028e37;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.reserve-btn:hover {
+    background-color: white;
+    color: #028e37;
+    border: 1px solid #028e37;
+}
+
+.checkOut {
+    position: relative;
+    left: 200px;
+    top: -48px;
+}
